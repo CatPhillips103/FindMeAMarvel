@@ -5,11 +5,19 @@ import random
 key = ItsHidden.api_key
 hash_key = ItsHidden.hashkey
 
-generateNumber = random.randint(1009000, 1009999)
+def getCharacter():
+    generateNumber = random.randint(1009000, 1009999)
 
-print(generateNumber)
+    url = f"https://gateway.marvel.com/v1/public/characters?id={generateNumber}&ts=567&apikey={key}&hash={hash_key}"
 
-url = f"https://gateway.marvel.com/v1/public/characters?id={generateNumber}&ts=567&apikey={key}&hash={hash_key}"
+    response = requests.get(url)
+    result = response.json()
+    print(result)
+
+getCharacter()
+
+
+
 
 
 
