@@ -12,7 +12,12 @@ def getCharacter():
 
     response = requests.get(url)
     result = response.json()
-    print(result)
+    # print(result)
+
+    if result["code"] == 200:
+        print(result["data"])
+    else:
+        print(f"CHARACTER NOT FOUND! TRY AGAIN!")
 
 getCharacter()
 
