@@ -15,7 +15,7 @@ def getCharacter():
     # print(result)
 
     if result["code"] == 200:
-        print(result["data"])
+        print(result["data"]["results"][0]["name"])
     else:
         print(f"CHARACTER NOT FOUND! TRY AGAIN!")
 
